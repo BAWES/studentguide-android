@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:coverflow="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context="com.techno.studentguide.activity.DetailsActivity">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/AD_TB_details_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_toolbar">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:src="@drawable/ic_back_arrow" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/_10sdp"
+                    android:src="@drawable/ic_circle_call" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/_10sdp"
+                    android:src="@drawable/ic_logo" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/_10sdp"
+                    android:src="@drawable/ic_pin_circle" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="School name"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_20sdp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
+
+    <ScrollView
+        android:id="@+id/AD_SV_scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/AD_TB_details_toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_parent1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_10sdp"
+                        android:text="Address"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="Hawali, Tunis street.\nNext to McDonalds\nAcross the road form the gas station. "
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_map" />
+            </LinearLayout>
+
+
+            <View
+                android:id="@+id/ll_parent2"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_below="@+id/ll_parent1"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:id="@+id/ll_parent3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_parent2"
+                android:gravity="left"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/_10sdp"
+                        android:text="Contact"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:drawableLeft="@drawable/ic_call"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:text="+965 123428722"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:drawableLeft="@drawable/ic_call"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:text="+965 237128312"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:adjustViewBounds="true"
+                        android:background="#4596D5"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_twitter" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/instagram" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/ll_parent4"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_below="@+id/ll_parent3"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/Description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_parent4"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:text="Description"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Description_contect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Description"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_below="@+id/Description_contect"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@android:color/darker_gray" />
+
+
+            <TextView
+                android:id="@+id/Gallery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view"
+                android:padding="@dimen/_10sdp"
+                android:text="Gallery"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold" />
+
+            <it.moondroid.coverflow.components.ui.containers.FeatureCoverFlow
+                android:id="@+id/gallery_cover_flow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Gallery"
+                android:visibility="visible"
+                coverflow:coverHeight="@dimen/_80sdp"
+                coverflow:coverWidth="@dimen/_80sdp"
+                coverflow:maxScaleFactor="1.5"
+                coverflow:reflectionGap="0px"
+                coverflow:rotationThreshold="0.5"
+                coverflow:scalingThreshold="0.5"
+                coverflow:spacing="0.6" />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_below="@+id/gallery_cover_flow"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@android:color/darker_gray" />
+
+
+            <TextView
+                android:id="@+id/Video"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view1"
+                android:padding="@dimen/_10sdp"
+                android:text="Video"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:id="@+id/frame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Video">
+
+                <VideoView
+                    android:id="@+id/video_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_240sdp"
+                    android:layout_gravity="center"
+                    android:visibility="visible" />
+
+                <Button
+                    android:id="@+id/AD_BT_open_video"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Play" />
+            </FrameLayout>
+
+            <include
+                layout="@layout/layout_footer_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>

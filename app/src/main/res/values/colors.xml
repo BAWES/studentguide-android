@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="clr_app">#00BD9C</color>
+    <color name="clr_black">#000000</color>
+    <color name="clr_green">#00A651</color>
+    <color name="clr_white">#ffffff</color>
+    <color name="clr_blue">#191970</color>
+    <color name="clr_red">#e03631</color>
+    <color name="clr_ltgrey">#d5d4d4</color>
+    <color name="clr_button">#bc2018</color>
+    <color name="clr_grey">#8a8a8a</color>
+    <color name="clr_dark_grey">#565656</color>
+    <color name="color_accent_red">#D80027</color>
+    <color name="bg_toolbar">#58763C</color>
+    <color name="top_toolbar_bg">#A7EE72</color>
+    <color name="bottom_bar_bg">#00bd9c</color>
+</resources>

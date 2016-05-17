@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LHL_FL_header_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:id="@+id/LHT_LL_top_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/banner_top"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:orientation="horizontal"
+                android:padding="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/LHT_IV_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/ic_search_button"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/txt_title_heading"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/LHT_IV_dot_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_dot"
+                android:visibility="visible" />
+
+
+        </LinearLayout>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/LHT_TB_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_below="@+id/LHT_LL_top_banner"
+            android:layout_gravity="bottom"
+            android:background="@color/bg_toolbar"
+            android:visibility="gone">
+
+
+            <EditText
+                android:id="@+id/LHT_ET_search_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:background="@drawable/ic_search"
+                android:drawableLeft="@drawable/ic_line"
+                android:drawablePadding="@dimen/_10sdp"
+                android:hint="@string/txt_hint_type_search"
+                android:inputType="text"
+                android:padding="@dimen/_10sdp"
+                android:singleLine="true"
+                android:textColorHint="@android:color/white"
+                android:visibility="gone" />
+
+
+            <TextView
+                android:id="@+id/LHT_TV_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="School title"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+
+        </android.support.v7.widget.Toolbar>
+
+        <ListView
+            android:id="@+id/LHT_LV_lists"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/LHT_TB_toolbar"
+            android:scrollbars="none"
+            android:visibility="gone" />
+
+
+        <ImageView
+            android:id="@+id/LHT_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/ic_location"
+            android:visibility="gone" />
+
+
+        <include layout="@layout/layout_filter_by_area" />
+
+    </RelativeLayout>
+
+</FrameLayout>

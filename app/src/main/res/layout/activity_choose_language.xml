@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/img_chooselang_bg"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:gravity="center|bottom"
+        android:orientation="vertical">
+
+        <com.techno.studentguide.customview.CustomButton
+            android:id="@+id/CL_btn_arabic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:background="@drawable/button_control"
+            android:text="@string/txt_arabic"
+            android:textAllCaps="false"
+            android:textColor="@color/clr_white"
+            android:textSize="@dimen/_13sdp"/>
+
+        <com.techno.studentguide.customview.CustomButton
+            android:id="@+id/CL_btn_english"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/button_control"
+            android:text="@string/txt_lang"
+            android:textAllCaps="false"
+            android:textColor="@color/clr_white"
+            android:textSize="@dimen/_13sdp"/>
+
+        <com.techno.studentguide.customview.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/CL_tv_termscondition"
+            android:textColor="@color/clr_white"
+            android:layout_marginTop="@dimen/_60sdp"
+            android:text="@string/txt_termscondition"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

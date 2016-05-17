@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/_10sdp"
+        android:paddingRight="@dimen/_10sdp"
+        android:paddingTop="@dimen/_10sdp">
+
+
+        <ImageView
+            android:id="@+id/AV_IV_school_image"
+            android:layout_width="@dimen/_64sdp"
+            android:layout_height="@dimen/_64sdp"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_logo" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:padding="@dimen/_10sdp">
+
+            <com.techno.studentguide.customview.CustomTextView
+                android:id="@+id/AV_CTV_school_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Oxford Finishing School"
+                android:textColor="@android:color/background_dark"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold" />
+
+            <com.techno.studentguide.customview.CustomTextView
+                android:id="@+id/AV_CTV_school_place"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/_10sdp"
+                android:gravity="center_vertical"
+                android:text="Ooty"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_12sdp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

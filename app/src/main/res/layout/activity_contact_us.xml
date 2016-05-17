@@ -1,0 +1,97 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_filter"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="bottom"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_weight="1">
+
+        <com.techno.studentguide.customview.CustomEditText
+            android:id="@+id/ACU_CET_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingRight="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:paddingLeft="@dimen/_20sdp"
+            android:hint="@string/txt_name"
+            android:textColorHint="@color/clr_white"
+            android:drawableLeft="@drawable/ic_line"
+            android:drawablePadding="@dimen/_20sdp"
+            android:textColor="@color/clr_white"
+            android:background="@drawable/ic_search"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+           />
+
+        <com.techno.studentguide.customview.CustomEditText
+            android:id="@+id/ACU_CET_contact_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingRight="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:paddingLeft="@dimen/_20sdp"
+            android:hint="@string/txt_contact_no"
+            android:textColorHint="@color/clr_white"
+            android:drawableLeft="@drawable/ic_line"
+            android:drawablePadding="@dimen/_20sdp"
+            android:textColor="@color/clr_white"
+            android:background="@drawable/ic_search"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+           />
+
+        <com.techno.studentguide.customview.CustomEditText
+            android:id="@+id/ACU_CET_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingRight="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:paddingLeft="@dimen/_20sdp"
+            android:hint="@string/txt_message"
+            android:textColorHint="@color/clr_white"
+            android:minLines="3"
+            android:drawableLeft="@drawable/ic_line"
+
+            android:drawablePadding="@dimen/_20sdp"
+            android:textColor="@color/clr_white"
+            android:background="@drawable/ic_search"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            />
+
+            <com.techno.studentguide.customview.CustomButton
+            android:id="@+id/ACU_CBTN_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/_10sdp"
+            android:ems="7"
+            android:text="@string/txt_submit"
+            android:textColor="@color/clr_white"
+            android:background="@drawable/button_normal"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textAllCaps="false"
+            android:layout_marginRight="@dimen/_20sdp"/>
+
+    </LinearLayout>
+
+    <include layout="@layout/layout_footer_toolbar"></include>
+
+</LinearLayout>

@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">StudentGuide</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="txt_arabic">Arabic</string>
+    <string name="txt_lang">English</string>
+    <string name="title_activity_category">CategoryActivity</string>
+    <string name="txt_training_center">Training Centres</string>
+    <string name="txt_termscondition"><![CDATA[Terms & Conditions]]></string>
+    <string name="title_activity_terms_condition">TermsConditionActivity</string>
+
+    <string name="loading">Loading.....</string>
+    <string name="title_activity_sub_category">SubCategoryActivity</string>
+    <string name="title_activity_contact_us">ContactUsActivity</string>
+    <string name="txt_submit">Submit</string>
+
+    <string name="txt_name_required">Name is required</string>
+    <string name="txt_name_pattern_error">Alphabets and space characters are allowed in Name</string>
+    <string name="txt_contact_no_required">Contact Number is required</string>
+    <string name="txt_contact_no_invalid">Contact number should be 10 characters</string>
+    <string name="txt_message_required">Message is required</string>
+    <string name="txt_name">Name</string>
+    <string name="txt_contact_no">Contact No</string>
+    <string name="txt_message">Message</string>
+
+
+    <string name="txt_hint_type_search">Type to search</string>
+    <string name="txt_title_heading">I\'m Looking for</string>
+
+
+</resources>

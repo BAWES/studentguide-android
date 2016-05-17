@@ -1,0 +1,25 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context="com.techno.studentguide.activity.AreaActivity">
+
+    <include layout="@layout/layout_header_toolbar" />
+
+    <ListView
+        android:id="@+id/AA_LV_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LHL_FL_header_layout"
+        android:background="@drawable/bg_category_lists"
+        android:divider="@null" />
+
+    <include
+        layout="@layout/layout_footer_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>
