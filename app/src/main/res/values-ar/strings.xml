@@ -3,5 +3,32 @@
 
     <string name="txt_hint_type_search">اكتب للبحث</string>
     <string name="txt_title_heading">أنا أبحث عن</string>
+    <string name="txt_arabic">العربية</string>
+    <string name="txt_lang">الإنجليزية</string>
+    <string name="title_activity_category">CategoryActivity</string>
+    <string name="txt_training_center">Training Centres</string>
+    <string name="txt_termscondition"><![CDATA[البنود و الظروف]]></string>
+    <string name="title_activity_terms_condition">TermsConditionActivity</string>
+
+    <string name="loading">جار التحميل.....</string>
+    <string name="title_activity_sub_category">SubCategoryActivity</string>
+    <string name="title_activity_contact_us">ContactUsActivity</string>
+    <string name="txt_submit">عرض</string>
+
+    <string name="txt_name_required">مطلوب اسم</string>
+    <string name="txt_name_pattern_error">يسمح الحروف الأبجدية و الحروف الفضاء في اسم</string>
+    <string name="txt_contact_no_required">مطلوب رقم الاتصال</string>
+    <string name="txt_contact_no_invalid">يجب أن يكون رقم الاتصال 10 حرفا</string>
+    <string name="txt_message_required">مطلوب رسالة</string>
+    <string name="txt_name">اسم</string>
+    <string name="txt_contact_no">رقم الاتصال</string>
+    <string name="txt_message">الرسالة</string>
+    <string name="txt_title_description">وصف</string>
+    <string name="txt_title_contact">اتصال</string>
+    <string name="txt_title_address">عنوان</string>
+    <string name="txt_title_gallery">صالة عرض</string>
+    <string name="txt_title_video">فيديو</string>
+    <string name="txt_title_filter_by_area">النتائج حسب المنطقة</string>
+    <string name="txt_title_reset_filter">تصفية إعادة تعيين</string>
 
 </resources>
