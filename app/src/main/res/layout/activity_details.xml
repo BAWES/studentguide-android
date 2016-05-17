@@ -97,7 +97,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/_10sdp"
-                        android:text="Address"
+                        android:text="@string/txt_title_address"
                         android:textColor="@android:color/black"
                         android:textSize="@dimen/_14sdp"
                         android:textStyle="bold" />
@@ -150,7 +150,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:padding="@dimen/_10sdp"
-                        android:text="Contact"
+                        android:text="@string/txt_title_contact"
                         android:textColor="@android:color/black"
                         android:textSize="@dimen/_14sdp"
                         android:textStyle="bold" />
@@ -216,7 +216,7 @@
                 android:layout_below="@+id/ll_parent4"
                 android:gravity="center"
                 android:padding="@dimen/_10sdp"
-                android:text="Description"
+                android:text="@string/txt_title_description"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/_14sdp"
                 android:textStyle="bold" />
@@ -247,7 +247,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/view"
                 android:padding="@dimen/_10sdp"
-                android:text="Gallery"
+                android:text="@string/txt_title_gallery"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/_14sdp"
                 android:textStyle="bold" />
@@ -281,7 +281,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/view1"
                 android:padding="@dimen/_10sdp"
-                android:text="Video"
+                android:text="@string/txt_title_video"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/_14sdp"
                 android:textStyle="bold" />
