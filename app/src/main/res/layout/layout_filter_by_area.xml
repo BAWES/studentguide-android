@@ -22,7 +22,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Filter\nby area"
+                android:text="@string/txt_title_filter_by_area"
                 android:textAllCaps="true"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_20sdp"
@@ -55,7 +55,7 @@
             android:background="@drawable/bg_rounded_corners_reset"
             android:gravity="center"
             android:padding="@dimen/_10sdp"
-            android:text="Reset Filter"
+            android:text="@string/txt_title_reset_filter"
             android:textColor="@android:color/white"
             android:textSize="@dimen/_14sdp" />
 
