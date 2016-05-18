@@ -24,11 +24,14 @@ public class ChooseLanguage extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Get the layout from activity_choose_language.xml
         setContentView(R.layout.activity_choose_language);
-//				getSupportActionBar ().hide ();
+        // Find your IDS in your activity_choose_language.xml layout
         initView();
+        //Click listener for change language : English and Arabic
         vEnglish.setOnClickListener(this);
         vArabic.setOnClickListener(this);
+        //Click listener for Terms and conditions
         vTermsConditions.setOnClickListener(this);
     }
 
@@ -44,23 +47,24 @@ public class ChooseLanguage extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         if (v.getId() == R.id.CL_btn_english) {
             Chooselanguage("en");
-            ControllerClass.CallScreen(ChooseLanguage.this, AreaActivity.class);
+            ControllerClass.CallScreen(ChooseLanguage.this, CategoryActivity.class);
         } else if (v.getId() == R.id.CL_btn_arabic) {
             Chooselanguage("ar");
             forceRTLIfSupported();
-            ControllerClass.CallScreen(ChooseLanguage.this, AreaActivity.class);
+            ControllerClass.CallScreen(ChooseLanguage.this, CategoryActivity.class);
         } else if (v.getId() == R.id.CL_tv_termscondition) {
             ControllerClass.CallScreen(ChooseLanguage.this, TermsConditionsActivity.class);
         }
     }
 
+    //This method handles language based on layout view changes. i.e. Right to left  and Left to right
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     private void forceRTLIfSupported() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
         }
     }
-
+    //This method fires language code based on mobile locale settings to set
     public void Chooselanguage(String languageCode) {
         String languageToLoad = languageCode;
         Locale locale = new Locale(languageToLoad);

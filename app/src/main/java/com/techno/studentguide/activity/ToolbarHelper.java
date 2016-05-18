@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -15,8 +17,12 @@ import com.techno.studentguide.R;
 
 /**
  * Created by Android on 5/13/2016.
+ * <p/>
+ * This class handles toolbar event for each class have in these application
  */
 public class ToolbarHelper {
+
+
     Context mContext;
     android.support.v7.widget.Toolbar toolbar;
     private static ToolbarHelper ourInstance = new ToolbarHelper();
@@ -27,7 +33,6 @@ public class ToolbarHelper {
     public final int SHOW_ON = 0;
     public final int SHOW_OFF = 1;
 
-
     public static ToolbarHelper getInstance() {
         return ourInstance;
     }
@@ -35,7 +40,7 @@ public class ToolbarHelper {
     private ToolbarHelper() {
     }
 
-
+    //    Toolbar view intialize view method
     public void intializeUi(android.support.v7.widget.Toolbar toolbar, Context mContext) {
         this.toolbar = toolbar;
         boolean isIconAvailable = true;
@@ -45,6 +50,7 @@ public class ToolbarHelper {
         ((AppCompatActivity) mContext).getSupportActionBar().setHomeButtonEnabled(isIconAvailable);
     }
 
+    //    set title in toolbar
     public void setTitle(String mTitle, int AlignTitle) {
         switch (AlignTitle) {
             case ALIGN_CENTER:
@@ -54,9 +60,11 @@ public class ToolbarHelper {
         }
     }
 
+    //    Toolbar visibility event
     public void toolBarVisiblity(final Context mContext, int show_filter, ImageView FilterId, ImageView dotLine) {
         this.mContext = mContext;
         switch (show_filter) {
+            //    Area list filter function
             case SHOW_ON:
                 toolbar.findViewById(R.id.LHT_TB_toolbar).setVisibility(View.VISIBLE);
                 dotLine.setVisibility(View.GONE);
@@ -92,10 +100,11 @@ public class ToolbarHelper {
 
     }
 
+    //    search box shows while click event search
     public void showSearchBox(boolean isVisible, ImageView dot_line, ListView searchLists) {
         if (isVisible) {
             toolbar.findViewById(R.id.LHT_TB_toolbar).setVisibility(View.VISIBLE);
-            toolbar.findViewById(R.id.LHT_ET_search_view).setVisibility(View.VISIBLE);
+            toolbar.findViewById(R.id.LHT_ACT_search_view).setVisibility(View.VISIBLE);
             searchLists.setVisibility(View.VISIBLE);
             dot_line.setVisibility(View.GONE);
             toolbar.findViewById(R.id.LHT_TV_title).setVisibility(View.GONE);
@@ -103,15 +112,20 @@ public class ToolbarHelper {
             ((AppCompatActivity) mContext).getSupportActionBar().setHomeButtonEnabled(false);
         } else {
             toolbar.findViewById(R.id.LHT_TB_toolbar).setVisibility(View.GONE);
-            toolbar.findViewById(R.id.LHT_ET_search_view).setVisibility(View.GONE);
+            toolbar.findViewById(R.id.LHT_ACT_search_view).setVisibility(View.GONE);
             toolbar.findViewById(R.id.LHT_TV_title).setVisibility(View.VISIBLE);
             searchLists.setVisibility(View.GONE);
             dot_line.setVisibility(View.VISIBLE);
             ((AppCompatActivity) mContext).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             ((AppCompatActivity) mContext).getSupportActionBar().setHomeButtonEnabled(true);
         }
-
-
     }
 
+    //    Auto search listview data populates
+    public void searchBoxEvent(String[] mCountries) {
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(mContext,
+                android.R.layout.simple_dropdown_item_1line, mCountries);
+        AutoCompleteTextView searchCategoryLists = (AutoCompleteTextView) toolbar.findViewById(R.id.LHT_ACT_search_view);
+        searchCategoryLists.setAdapter(adapter);
+    }
 }

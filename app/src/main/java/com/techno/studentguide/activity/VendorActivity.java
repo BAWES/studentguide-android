@@ -31,16 +31,19 @@ public class VendorActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Get the layout from activity_vendor.xml
         setContentView(R.layout.activity_vendor);
-
+        // Find your IDS in your activity_vendor.xml layout
         initView();
+        // Toolbar event initiate here
         ToolbarHelper.getInstance().intializeUi((Toolbar) findViewById(R.id.LHT_TB_toolbar), VendorActivity.this);
         ToolbarHelper.getInstance().toolBarVisiblity(VendorActivity.this, 0, (ImageView) findViewById(R.id.LHT_location), (ImageView) findViewById(R.id.LHT_IV_dot_line));
         ToolbarHelper.getInstance().setTitle("School name", 1);
         vSettings.setVisibility(View.GONE);
+        // Button click event triggered for home and message
         vHome.setOnClickListener(this);
         vMessage.setOnClickListener(this);
-
+        // Dummy data
         mVendorList = new ArrayList<>();
         for (int vendorcount = 0; vendorcount < 15; vendorcount++) {
             Vendor mVendor = new Vendor();
@@ -49,7 +52,11 @@ public class VendorActivity extends AppCompatActivity implements View.OnClickLis
             mVendor.setImage_url("");
             mVendorList.add(mVendor);
         }
+
+         // To show vendor list items
         showVendorList();
+
+
        /* mFilterLocation.setVisibility(View.VISIBLE);
         mFilter.setBackgroundColor(getResources().getColor(android.R.color.transparent));
         mFilterLocation.setOnClickListener(new View.OnClickListener() {
@@ -75,6 +82,7 @@ public class VendorActivity extends AppCompatActivity implements View.OnClickLis
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent inCategory = new Intent(VendorActivity.this, DetailsActivity.class);
                 startActivity(inCategory);
+                finish();
             }
         });
     }
@@ -96,9 +104,11 @@ public class VendorActivity extends AppCompatActivity implements View.OnClickLis
         switch (v.getId()) {
             case R.id.LFT_IV_home:
                 ControllerClass.CallScreen(VendorActivity.this, ChooseLanguage.class);
+                finish();
                 break;
             case R.id.LFT_IV_message:
                 ControllerClass.CallScreen(VendorActivity.this, ContactUsActivity.class);
+                finish();
                 break;
         }
     }
