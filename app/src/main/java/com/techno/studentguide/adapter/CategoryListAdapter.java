@@ -9,13 +9,13 @@ import android.widget.BaseAdapter;
 
 import com.techno.studentguide.R;
 import com.techno.studentguide.customview.CustomTextView;
-import com.techno.studentguide.model.Category;
+import com.techno.studentguide.model.Area;
 
 import java.util.ArrayList;
 
-/**
- * Created by Android on 5/13/2016.
- */
+/*********
+ * Adapter class extends with BaseAdapter and implements with OnClickListener
+ ************/
 public class CategoryListAdapter extends BaseAdapter {
 
     /***********
@@ -23,67 +23,56 @@ public class CategoryListAdapter extends BaseAdapter {
      *********/
     private Activity activity;
     private static LayoutInflater inflater = null;
-    ArrayList<Category> alCategoryList;
+    ArrayList<Area> alAreaList;
 
-    public CategoryListAdapter(Activity a, ArrayList<Category> alCategoryList)
-    {
+    public CategoryListAdapter(Activity a, ArrayList<Area> mAreaList) {
         activity = a;
-        this.alCategoryList = alCategoryList;
-        inflater = ( LayoutInflater )activity.
+        alAreaList = mAreaList;
+        inflater = (LayoutInflater) activity.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
-    public int getCount ()
-    {
-        if (alCategoryList.size () <= 0 )
-        {
+    public int getCount() {
+
+        if (alAreaList.size() <= 0) {
             return 1;
         }
-        return alCategoryList.size ();
+        return alAreaList.size();
     }
 
-    public Category getItem ( int position )
-    {
-        return alCategoryList.get(position);
+    public Area getItem(int position) {
+        return alAreaList.get(position);
     }
 
-    public long getItemId ( int position )
-    {
+    public long getItemId(int position) {
         return position;
     }
 
-    class ViewHolder
-    {
-        public CustomTextView vCategoryName;
+    public static class ViewHolder {
+        public CustomTextView vAreaName;
     }
 
-    public View getView(int position, View convertView, ViewGroup parent)
-    {
+    public View getView(int position, View convertView, ViewGroup parent) {
+
         View vi = convertView;
         ViewHolder holder;
 
-        if ( convertView == null )
-        {
-            vi = inflater.inflate (R.layout.adapter_area, null);
-
-            holder = new ViewHolder ();
-            holder.vCategoryName = (CustomTextView) vi.findViewById (R.id.AL_CTV_AreaName);
-            vi.setTag (holder);
-        }
-        else
-        {
-            holder = (ViewHolder) vi.getTag ();
+        if (convertView == null) {
+            vi = inflater.inflate(R.layout.adapter_area, null);
+            holder = new ViewHolder();
+            holder.vAreaName = (CustomTextView) vi.findViewById(R.id.AL_CTV_AreaName);
+            vi.setTag(holder);
+        } else {
+            holder = (ViewHolder) vi.getTag();
         }
 
-        if (alCategoryList.size () <= 0 )
-        {
-            holder.vCategoryName.setText("No Data Found");
-        }
-        else
-        {
-            holder.vCategoryName.setText(alCategoryList.get(position).getCategory_name_en());
+        if (alAreaList.size() <= 0) {
+            holder.vAreaName.setText("No Data Found");
+        } else {
+            holder.vAreaName.setText(alAreaList.get(position).getArea_name_ar());
         }
         return vi;
     }
+
 
 }
