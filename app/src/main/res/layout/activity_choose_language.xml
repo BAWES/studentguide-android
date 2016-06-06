@@ -13,7 +13,7 @@
         android:gravity="center|bottom"
         android:orientation="vertical">
 
-        <com.techno.studentguide.customview.CustomButton
+        <Button
             android:id="@+id/CL_btn_arabic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -23,26 +23,27 @@
             android:text="@string/txt_arabic"
             android:textAllCaps="false"
             android:textColor="@color/clr_white"
-            android:textSize="@dimen/_13sdp"/>
+            android:textSize="@dimen/_12sdp"/>
 
-        <com.techno.studentguide.customview.CustomButton
+        <Button
             android:id="@+id/CL_btn_english"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_20sdp"
             android:layout_marginRight="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_10sdp"
-            android:background="@drawable/button_control"
+            android:background="@drawable/button_english_colored"
             android:text="@string/txt_lang"
             android:textAllCaps="false"
             android:textColor="@color/clr_white"
-            android:textSize="@dimen/_13sdp"/>
+            android:textSize="@dimen/_12sdp"/>
 
-        <com.techno.studentguide.customview.CustomTextView
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/CL_tv_termscondition"
-            android:textColor="@color/clr_white"
+            android:textColor="@color/clr_grey"
+            android:textSize="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_60sdp"
             android:text="@string/txt_termscondition"/>
 

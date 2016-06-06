@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LFBA_LL_filter"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+
+    <RelativeLayout
+        android:id="@+id/RL_child"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginRight="@dimen/_100sdp"
+        android:background="@drawable/bg_filter"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/Rl_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.techno.studentguide.customview.CustomTextView
+                android:id="@+id/LFBA_CTV_filter_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="right"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_toRightOf="@+id/LFBA_IV_close_filter"
+                android:text="@string/txt_title_filter_by_area"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/LFBA_IV_close_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:adjustViewBounds="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_2sdp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_cross_circle"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+
+        <ListView
+            android:id="@+id/lv_area_filter_lists"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/LFBA_TV_reset_apply"
+            android:layout_below="@+id/Rl_filter"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:divider="@null"
+            android:scrollbars="none" />
+
+        <com.techno.studentguide.customview.CustomTextView
+            android:id="@+id/LFBA_TV_reset_apply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/LFBA_TV_reset_filter"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@drawable/bg_rounded_corners_reset"
+            android:gravity="center"
+            android:padding="@dimen/_10sdp"
+            android:text="@string/txt_title_apply_filter"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_12sdp" />
+
+
+        <com.techno.studentguide.customview.CustomTextView
+            android:id="@+id/LFBA_TV_reset_filter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/bg_rounded_corners_reset"
+            android:gravity="center"
+            android:padding="@dimen/_10sdp"
+            android:text="@string/txt_title_reset_filter"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_12sdp" />
+
+    </RelativeLayout>
+</LinearLayout>

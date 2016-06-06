@@ -2,12 +2,44 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
 
-    <WebView
-        android:id="@+id/ATC_WV_terms_conditions"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/AC_TB_details_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_toolbar">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/txt_title_terms_and_conditions"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_12sdp" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/_10sdp" />
+        android:layout_below="@+id/AC_TB_details_toolbar">
+
+        <TextView
+            android:id="@+id/ATC_WV_terms_conditions"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_10sdp"
+            android:text=""
+            android:textColor="@android:color/black" />
+    </ScrollView>
+
+    <include
+        layout="@layout/layout_footer_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

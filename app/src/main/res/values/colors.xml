@@ -15,4 +15,5 @@
     <color name="bg_toolbar">#58763C</color>
     <color name="top_toolbar_bg">#A7EE72</color>
     <color name="bottom_bar_bg">#00bd9c</color>
+    <color name="bg_contact_us_field">#6c7b68</color>
 </resources>

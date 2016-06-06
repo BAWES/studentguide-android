@@ -1,4 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/AV_RL_parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
@@ -7,13 +8,30 @@
 
     <include layout="@layout/layout_header_toolbar"></include>
 
+
     <ListView
         android:id="@+id/ASC_LV_vendor"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/LHL_FL_header_layout"
+        android:background="@android:color/white"
+        android:visibility="visible" />
+
+
+    <com.techno.studentguide.customview.CustomTextView
+        android:id="@+id/AV_TV_no_data_found"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/LHL_FL_header_layout" />
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="@string/txt_title_no_data_found"
+        android:textColor="@color/clr_white"
+        android:textSize="@dimen/_14sdp"
+        android:visibility="gone" />
+
 
     <include
+        android:id="@+id/footer"
         layout="@layout/layout_footer_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

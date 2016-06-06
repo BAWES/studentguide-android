@@ -10,14 +10,40 @@
         <item name="android:windowNoTitle">true</item>
     </style>
 
-    <style name="customDialog" parent="@android:style/Theme.Dialog">
+    <style name="MyDialog" parent="AppTheme">
+
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:gravity">top|left</item>
+        <!--<item name="android:padding">0dp</item>
+       <item name="android:layout_margin">0dp</item>-->
+
+
+    </style>
+
+    <style name="customRightDialog" parent="MyDialog">
         <item name="android:windowAnimationStyle">@style/customDialogAnimation</item>
-        <item name="android:windowBackground">@drawable/bg_filter</item>
     </style>
 
     <style name="customDialogAnimation">
-        <item name="android:windowEnterAnimation">@anim/translate_left_side</item>
-        <item name="android:windowExitAnimation">@anim/translate_right_side</item>
+        <item name="android:windowEnterAnimation">@anim/right_in</item>
+        <item name="android:windowExitAnimation">@anim/right_out</item>
     </style>
+
+    <style name="customLeftDialog" parent="MyDialog">
+        <item name="android:windowAnimationStyle">@style/customLeftDialogAnimation</item>
+    </style>
+
+    <style name="customLeftDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_left</item>
+    </style>
+
 
 </resources>

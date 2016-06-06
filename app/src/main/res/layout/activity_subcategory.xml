@@ -1,25 +1,26 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
-    android:orientation="vertical"
-    tools:context=".activity.CategoryActivity">
+    android:background="@drawable/bg_category_lists"
+    android:orientation="vertical">
 
-    <include layout="@layout/layout_header_toolbar" />
+    <include layout="@layout/layout_header_toolbar"></include>
+
 
     <ListView
-        android:id="@+id/AA_LV_area"
+        android:id="@+id/AC_LV_category"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_300sdp"
         android:layout_below="@+id/LHL_FL_header_layout"
-        android:background="@drawable/bg_category_lists"
+        android:layout_above="@+id/footer"
         android:divider="@null" />
 
     <include
+        android:id="@+id/footer"
         layout="@layout/layout_footer_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true" />
+
 
 </RelativeLayout>

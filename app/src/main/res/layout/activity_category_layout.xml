@@ -1,24 +1,29 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_category_lists"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".activity.CategoryActivity">
 
-    <include layout="@layout/layout_header_toolbar"></include>
-
+    <include layout="@layout/layout_header_toolbar" />
 
     <ListView
-        android:id="@+id/AC_LV_category"
+        android:id="@+id/AA_LV_area"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/footer"
         android:layout_below="@+id/LHL_FL_header_layout"
-        android:divider="@null" />
+        android:choiceMode="singleChoice"
+        android:divider="@null"
+        android:listSelector="#00000000"
+        android:scrollbars="none" />
 
     <include
+        android:id="@+id/footer"
         layout="@layout/layout_footer_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true" />
-
 
 </RelativeLayout>

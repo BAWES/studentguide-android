@@ -4,7 +4,6 @@
     <string name="txt_hint_type_search">اكتب للبحث</string>
     <string name="txt_title_heading">أنا أبحث عن</string>
     <string name="txt_arabic">العربية</string>
-    <string name="txt_lang">الإنجليزية</string>
     <string name="title_activity_category">CategoryActivity</string>
     <string name="txt_training_center">Training Centres</string>
     <string name="txt_termscondition"><![CDATA[البنود و الظروف]]></string>
@@ -30,5 +29,9 @@
     <string name="txt_title_video">فيديو</string>
     <string name="txt_title_filter_by_area">النتائج حسب المنطقة</string>
     <string name="txt_title_reset_filter">تصفية إعادة تعيين</string>
+    <string name="txt_title_apply_filter">تطبيق</string>
+    <string name="txt_title_contact_us">اتصل بنا</string>
+    <string name="txt_title_no_data_found">لاتوجد بيانات</string>
+    <string name="txt_title_terms_and_conditions">الأحكام والشروط</string>
 
 </resources>
