@@ -6,7 +6,7 @@
     <string name="txt_arabic">العربية</string>
     <string name="title_activity_category">CategoryActivity</string>
     <string name="txt_training_center">Training Centres</string>
-    <string name="txt_termscondition"><![CDATA[البنود و الظروف]]></string>
+    <!--<string name="txt_termscondition"><![CDATA[البنود و الظروف]]></string>-->
     <string name="title_activity_terms_condition">TermsConditionActivity</string>
 
     <string name="loading">جار التحميل.....</string>
@@ -32,6 +32,6 @@
     <string name="txt_title_apply_filter">تطبيق</string>
     <string name="txt_title_contact_us">اتصل بنا</string>
     <string name="txt_title_no_data_found">لاتوجد بيانات</string>
-    <string name="txt_title_terms_and_conditions">الأحكام والشروط</string>
+    <!--<string name="txt_title_terms_and_conditions">الأحكام والشروط</string>-->
 
 </resources>

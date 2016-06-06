@@ -1,9 +1,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@drawable/img_chooselang_bg"
-              android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_chooselang_bg"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
             android:text="@string/txt_arabic"
             android:textAllCaps="false"
             android:textColor="@color/clr_white"
-            android:textSize="@dimen/_12sdp"/>
+            android:textSize="@dimen/_12sdp" />
 
         <Button
             android:id="@+id/CL_btn_english"
@@ -32,20 +32,20 @@
             android:layout_marginLeft="@dimen/_20sdp"
             android:layout_marginRight="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_10sdp"
-            android:background="@drawable/button_english_colored"
+            android:background="@drawable/button_normal"
             android:text="@string/txt_lang"
             android:textAllCaps="false"
             android:textColor="@color/clr_white"
-            android:textSize="@dimen/_12sdp"/>
+            android:textSize="@dimen/_12sdp" />
 
         <TextView
+            android:id="@+id/CL_tv_termscondition"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/CL_tv_termscondition"
-            android:textColor="@color/clr_grey"
-            android:textSize="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_60sdp"
-            android:text="@string/txt_termscondition"/>
+            android:text="@string/txt_termscondition"
+            android:textColor="@color/clr_grey"
+            android:textSize="@dimen/_10sdp" />
 
     </LinearLayout>
 
