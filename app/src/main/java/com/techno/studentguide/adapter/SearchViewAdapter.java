@@ -7,9 +7,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Filter;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.techno.studentguide.R;
+import com.techno.studentguide.customview.CustomTextView;
 import com.techno.studentguide.model.Search;
 
 import java.util.ArrayList;
@@ -45,16 +45,16 @@ public class SearchViewAdapter extends ArrayAdapter<Search> {
             mHolder = (ViewHolder) convertView.getTag();
         }
         Search searchData = tempItems.get(position);
-        mHolder.mVendorName = (TextView) convertView.findViewById(R.id.ASV_CTV_school_name);
+        mHolder.mVendorName = (CustomTextView) convertView.findViewById(R.id.ASV_CTV_school_name);
         mHolder.mVendorImage = (ImageView) convertView.findViewById(R.id.ASV_IV_school_image);
-        mHolder.mVendorPlaces = (TextView) convertView.findViewById(R.id.ASV_CTV_school_place);
+        mHolder.mVendorPlaces = (CustomTextView) convertView.findViewById(R.id.ASV_CTV_school_place);
         mHolder.mVendorPlaces.setText(searchData.getmVendorPlaces());
         return convertView;
     }
 
     class ViewHolder {
         ImageView mVendorImage;
-        TextView mVendorName, mVendorPlaces;
+        CustomTextView mVendorName, mVendorPlaces;
 
     }
     @Override
