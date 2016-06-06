@@ -14,12 +14,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.techno.studentguide.R;
+import com.techno.studentguide.api.AppConfig;
 import com.techno.studentguide.customview.CustomProgressDialog;
 import com.techno.studentguide.utils.ControllerClass;
 
 public class TermsConditionsActivity extends AppCompatActivity {
     // Showing Terms and Conditions URL Page
-    TextView vTerms, mHeading;
+
+    TextView mHeading, vTerms;
 
     // Showing Progress bar
     CustomProgressDialog vCPD;
@@ -76,7 +78,16 @@ public class TermsConditionsActivity extends AppCompatActivity {
         vMessage = (ImageView) findViewById(R.id.LFT_IV_message);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        mToolbar.setNavigationIcon(R.drawable.ic_back_arrow);
+//        mToolbar.setNavigationIcon(R.drawable.ic_back_arrow);
+        if (AppConfig.getLanguage_code() != null) {
+            if (AppConfig.getLanguage_code().equalsIgnoreCase("en")) {
+                mToolbar.setNavigationIcon(R.drawable.ic_back_arrow);
+            } else {
+                mToolbar.setNavigationIcon(R.drawable.right_arrow);
+            }
+        } else {
+            mToolbar.setNavigationIcon(R.drawable.ic_back_arrow);
+        }
         sharedpreferences = getSharedPreferences(mypreference, Context.MODE_PRIVATE);
     }
 

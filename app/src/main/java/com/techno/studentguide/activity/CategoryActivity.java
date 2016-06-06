@@ -121,7 +121,6 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
     public void onBackPressed() {
         super.onBackPressed();
         // native onBack pressed
-        finish();
     }
 
     private class SearchItemListener implements View.OnClickListener {

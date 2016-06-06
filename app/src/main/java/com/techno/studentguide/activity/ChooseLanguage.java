@@ -4,6 +4,7 @@ import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
@@ -60,7 +61,7 @@ public class ChooseLanguage extends AppCompatActivity implements View.OnClickLis
     public static final String area_key = "area_key";
     public static final String vendor_key = "vendor_key";
     public static final String terms_conditions = "terms_conditions";
-    static boolean languageSelected;
+    static int languageSelected = -1;
     private static final int PERMISSION_REQUEST_CODE = 1;
 
     @Override
@@ -98,35 +99,32 @@ public class ChooseLanguage extends AppCompatActivity implements View.OnClickLis
                 ActivityCompat.requestPermissions(ChooseLanguage.this, PERMISSIONS, PERMISSION_REQUEST_CODE);
             }
         }
-        OneSignal.idsAvailable(new OneSignal.IdsAvailableHandler() {
-            @Override
-            public void idsAvailable(String userId, String registrationId) {
-                Log.d("debug", "User:" + userId);
-                player_id = userId;
-
-                if (registrationId != null) {
-                    Log.d("debug", "registrationId:" + registrationId);
-
-                }
-
-            }
-        });
 
         mProgressDialog = new ProgressDialog(ChooseLanguage.this);  // Progress dialog handles progress for running background UI threads
         mProgressDialog.setMessage("Loading...");
         mProgressDialog.setCancelable(false);
         mProgressDialog.show();
-        if (CommonFunctions.getInstance().isNetworkAvailable(ChooseLanguage.this)) {
-            showSettings();   // calls settings Api
-            mProgressDialog.dismiss();
-        } else {
-            mProgressDialog.dismiss();
-        }
-        if (languageSelected) {
+        OneSignal.idsAvailable(new OneSignal.IdsAvailableHandler() {
+            @Override
+            public void idsAvailable(String userId, String registrationId) {
+                player_id = userId;
+                if (CommonFunctions.getInstance().isNetworkAvailable(ChooseLanguage.this)) {
+                    showSettings(userId);   // calls settings Api
+                    mProgressDialog.dismiss();
+                } else {
+                    mProgressDialog.dismiss();
+                }
+
+            }
+        });
+        if (languageSelected == 1) {
             findViewById(R.id.CL_btn_english).setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.button_normal));
             findViewById(R.id.CL_btn_arabic).setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.button_english_colored));
-        } else {
+        } else if (languageSelected == 0) {
             findViewById(R.id.CL_btn_english).setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.button_english_colored));
+            findViewById(R.id.CL_btn_arabic).setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.button_normal));
+        } else {
+            findViewById(R.id.CL_btn_english).setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.button_normal));
             findViewById(R.id.CL_btn_arabic).setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.button_normal));
         }
     }
@@ -154,7 +152,7 @@ public class ChooseLanguage extends AppCompatActivity implements View.OnClickLis
             AppConfig.setLanguage_code(Chooselanguage("en"));
             findViewById(R.id.CL_btn_english).setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.button_english_colored));
             findViewById(R.id.CL_btn_arabic).setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.button_normal));
-            languageSelected = false;
+            languageSelected = 0;
             MyApplication.getInstance().trackEvent("English", "Click", "Choose Language");
             CategoryLocalDB();
             ChangeLanguageSettings();
@@ -164,7 +162,7 @@ public class ChooseLanguage extends AppCompatActivity implements View.OnClickLis
             findViewById(R.id.CL_btn_english).setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.button_normal));
             findViewById(R.id.CL_btn_arabic).setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.button_english_colored));
             forceRTLIfSupported();   // changes layout from left to right
-            languageSelected = true;
+            languageSelected = 1;
             MyApplication.getInstance().trackEvent("Arabic", "Click", "Choose Language");
             CategoryLocalDB();
             ChangeLanguageSettings();
@@ -195,10 +193,10 @@ public class ChooseLanguage extends AppCompatActivity implements View.OnClickLis
 
     }
 
-    private void showSettings() {
+    private void showSettings(String userId) {
         if (CommonFunctions.getInstance().isNetworkAvailable(ChooseLanguage.this)) {
             // checks wheather internet connection is enable or not condition.
-            SettingsDetailsApi.getInstance().Callresponse(device_type, player_id, new Callback<SettingsDetailsApi.SettingsApi>() {  // settings Api
+            SettingsDetailsApi.getInstance().Callresponse(device_type, userId, new Callback<SettingsDetailsApi.SettingsApi>() {  // settings Api
                         @Override
                         public void success(SettingsDetailsApi.SettingsApi settingsApi, Response response) {
                             if (settingsApi.getCode() == 200) { // success
@@ -337,8 +335,7 @@ public class ChooseLanguage extends AppCompatActivity implements View.OnClickLis
     // CategoryLocalDB() fires local db
     private void CategoryLocalDB() {
         if (LocalContactDB.GetCategory().size() > 0) {
-            ControllerClass.CallScreen(ChooseLanguage.this, CategoryActivity.class);
-            finish();
+            startActivity(new Intent(ChooseLanguage.this, CategoryActivity.class));
         } else {
             Toast.makeText(ChooseLanguage.this, "Category list is empty", Toast.LENGTH_SHORT).show();
         }
@@ -574,6 +571,12 @@ public class ChooseLanguage extends AppCompatActivity implements View.OnClickLis
         }
     }
 
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
     public boolean hasPermissions(Context context, String... permissions) {
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context != null && permissions != null) {
             for (String permission : permissions) {
@@ -604,5 +607,10 @@ public class ChooseLanguage extends AppCompatActivity implements View.OnClickLis
         return player_id;
     }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        languageSelected = -1;
+        finish();
+    }
 }
