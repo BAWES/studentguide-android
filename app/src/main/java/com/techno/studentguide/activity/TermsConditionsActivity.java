@@ -1,59 +1,83 @@
 package com.techno.studentguide.activity;
 
-import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.techno.studentguide.R;
 import com.techno.studentguide.customview.CustomProgressDialog;
+import com.techno.studentguide.utils.ControllerClass;
 
 public class TermsConditionsActivity extends AppCompatActivity {
     // Showing Terms and Conditions URL Page
-    WebView vTerms;
+    TextView vTerms, mHeading;
 
     // Showing Progress bar
     CustomProgressDialog vCPD;
+    ImageView vHome, vMessage;
+    Toolbar mToolbar;
+    SharedPreferences sharedpreferences;
+    public static final String mypreference = "mypref";
+    public static final String terms_conditions = "terms_conditions";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_terms_conditions);
-
+        initView();
         try {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#6d0e10")));
-            getSupportActionBar().setTitle(getString(R.string.txt_termscondition));
-            getSupportActionBar().setIcon(R.drawable.ic_back_arrow);
+            Typeface custom_english = Typeface.createFromAsset(getAssets(), "fonts/Montserrat-Regular.ttf");
+            vTerms.setTypeface(custom_english);
+            vTerms.setText(Html.fromHtml(sharedpreferences.getString(terms_conditions, null)));
+            mHeading.setText(getResources().getString(R.string.txt_title_terms_and_conditions));
+            mHeading.setTypeface(custom_english);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-       // getSupportActionBar().hide();
 
-        initView();
-        vTerms.setBackgroundColor(0);
-        vTerms.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
-        WebSettings webSettings = vTerms.getSettings();
-        vTerms.getSettings().setLoadWithOverviewMode(true);
-        vTerms.getSettings().setUseWideViewPort(true);
-        vTerms.getSettings().setBuiltInZoomControls(true);
-        vTerms.getSettings().setPluginState(WebSettings.PluginState.ON);
-        vTerms.getSettings().setJavaScriptEnabled(true);
-        webSettings.setTextSize(WebSettings.TextSize.NORMAL);
+        vHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ControllerClass.CallHome(TermsConditionsActivity.this, ChooseLanguage.class);
+                //Set the transition -> method available from Android 2.0 and beyond
+                overridePendingTransition(R.anim.pull_up_from_bottom, R.anim.push_out_to_bottom);
+            }
+        });
+
+        vMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ControllerClass.CallContactus(TermsConditionsActivity.this, ContactUsActivity.class);
+                //Set the transition -> method available from Android 2.0 and beyond
+                overridePendingTransition(R.anim.pull_up_from_bottom, R.anim.push_out_to_bottom);
+            }
+        });
+
+
     }
 
+
     // Initialize view
-    private void initView()
-    {
-        vTerms = (WebView) findViewById(R.id.ATC_WV_terms_conditions);
+    private void initView() {
+        vTerms = (TextView) findViewById(R.id.ATC_WV_terms_conditions);
+        mToolbar = (Toolbar) findViewById(R.id.AC_TB_details_toolbar);
+        mHeading = (TextView) findViewById(R.id.tv_title);
+        vHome = (ImageView) findViewById(R.id.LFT_IV_home);
+        vMessage = (ImageView) findViewById(R.id.LFT_IV_message);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        mToolbar.setNavigationIcon(R.drawable.ic_back_arrow);
+        sharedpreferences = getSharedPreferences(mypreference, Context.MODE_PRIVATE);
     }
 
     @Override
@@ -67,43 +91,8 @@ public class TermsConditionsActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        showWebview("https://www.technoduce.com/");
     }
 
-    // Showing Webview
-    private void showWebview(String mLoadUrl)
-    {
-        vCPD = CustomProgressDialog.getInstance();
-        vCPD.show(this, "", getString(R.string.loading));
-        vTerms.loadUrl(mLoadUrl);
-        vTerms.setWebViewClient(new MyWebViewClient());
-    }
-
-    // Dismiss the progress bar
-    private class MyWebViewClient extends WebViewClient {
-        @Override
-        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            view.loadUrl(url);
-            return true;
-        }
-
-        @Override
-        public void onPageFinished(WebView view, String url) {
-
-            if (vCPD != null) {
-                if (vCPD.isShowing()) {
-                    vCPD.dismiss();
-                }
-            }
-
-            super.onPageFinished(view, url);
-        }
-
-        @Override
-        public void onPageStarted(WebView view, String url, Bitmap favicon) {
-            super.onPageStarted(view, url, favicon);
-        }
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -122,5 +111,10 @@ public class TermsConditionsActivity extends AppCompatActivity {
 
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }
