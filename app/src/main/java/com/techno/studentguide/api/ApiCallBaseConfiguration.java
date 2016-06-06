@@ -14,7 +14,6 @@ public class ApiCallBaseConfiguration {
     private static ApiCallBaseConfiguration ourInstance;
     RestAdapter ApiBuilder;
 
-    public static String BaseUrl = "http://staging1.kammavarkalyanamalai.com/api";
 
     public static ApiCallBaseConfiguration getInstance() {
         if (ourInstance == null) {
@@ -38,7 +37,7 @@ public class ApiCallBaseConfiguration {
         ApiBuilder = new RestAdapter.Builder()
                 .setLogLevel(RestAdapter.LogLevel.FULL)
                 .setClient(new OkClient(mOkHttp))
-                .setEndpoint(BaseUrl)
+                .setEndpoint(AppConfig.domainName)
                 .build();
     }
 
