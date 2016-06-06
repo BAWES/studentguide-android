@@ -3,26 +3,25 @@ package com.techno.studentguide.customview;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
-import android.widget.EditText;
+import android.widget.CheckBox;
 
 import com.techno.studentguide.api.AppConfig;
 
-
 /**
- * Created by tech on 1/29/2016.
+ * Created by tech on 5/30/2016.
  */
-public class CustomEditText extends EditText {
-    public CustomEditText ( Context context ) {
+public class CustomCheckBox extends CheckBox {
+    public CustomCheckBox(Context context) {
         super(context);
         setFont();
     }
 
-    public CustomEditText ( Context context, AttributeSet attrs ) {
+    public CustomCheckBox(Context context, AttributeSet attrs) {
         super(context, attrs);
         setFont();
     }
 
-    public CustomEditText ( Context context, AttributeSet attrs, int defStyle ) {
+    public CustomCheckBox(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         setFont();
     }
